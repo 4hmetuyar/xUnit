@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using xUnit.Web.Models;
 
 namespace xUnit.Web.Controllers
 {
     public class HomeController : Controller
     {
+        public bool IsNoob { get; set; }
+
         public IActionResult Index()
         {
             return View();
@@ -38,6 +36,11 @@ namespace xUnit.Web.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public bool BooleanAsserts()
+        {
+            return  true;
         }
     }
 }
